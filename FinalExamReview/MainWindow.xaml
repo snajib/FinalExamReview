@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalExamReview"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="397.5" Width="683">
+    <Grid Margin="-16,0,17,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnPrint" Content="Print Values" HorizontalAlignment="Left" Margin="44,33,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
+        <ListBox x:Name="lstGenres" HorizontalAlignment="Left" Height="208" Margin="44,107,0,0" VerticalAlignment="Top" Width="174"/>
+        <Label x:Name="lblGenres" Content="Genres:" HorizontalAlignment="Left" Margin="44,81,0,0" VerticalAlignment="Top" Height="26" Width="49"/>
+        <Label x:Name="lblHighScore" Content="Highest IMDB Score:" HorizontalAlignment="Left" Margin="474,101,0,0" VerticalAlignment="Top" Width="122" Height="26"/>
+        <TextBox x:Name="txtScore" HorizontalAlignment="Left" Height="23" Margin="476,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ListBox x:Name="lstVoted" HorizontalAlignment="Left" Height="208" Margin="257,107,0,0" VerticalAlignment="Top" Width="174"/>
+        <Label x:Name="lblVoted" Content="350000 or More Voted Users:" HorizontalAlignment="Left" Margin="257,81,0,0" VerticalAlignment="Top" Height="26" Width="164"/>
+        <Label x:Name="lblRusso" Content="How Many Anthony Russo:" HorizontalAlignment="Left" Margin="476,181,0,0" VerticalAlignment="Top" Width="164" Height="26"/>
+        <TextBox x:Name="txtRusso" HorizontalAlignment="Left" Height="23" Margin="476,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblRDJ" Content="How Many With RDJ" HorizontalAlignment="Left" Margin="476,260,0,0" VerticalAlignment="Top" Width="164" Height="26"/>
+        <TextBox x:Name="txtRDJ" HorizontalAlignment="Left" Height="23" Margin="476,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
     </Grid>
 </Window>

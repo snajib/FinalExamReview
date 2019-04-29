@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +22,35 @@ namespace FinalExamReview
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<Movie> movieList = new List<Movie>();
+
         public MainWindow()
         {
+           
+
             InitializeComponent();
+
+            string path = @"http://pcbstuou.w27.wh-2.com/webservices/3033/api/Movies?number=100";
+
+            using (HttpClient client = new HttpClient())
+            {
+                var response = client.GetAsync(path).Result;
+                if(response.IsSuccessStatusCode)
+                {
+                    var content = response.Content.ReadAsStringAsync().Result;
+                    var movList = JsonConvert.DeserializeObject<List<Movie>>(content);
+
+                    foreach (var mov in movList)
+                    {
+                        movieList.Add(mov);
+                    }
+                }
+                
+                
+            }
+ 
         }
+
+
     }
 }
