@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿//Sammy Najib
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,6 +52,43 @@ namespace FinalExamReview
  
         }
 
+        private void BtnPrint_Click(object sender, RoutedEventArgs e)
+        {
+            txtScore.Text = "0";
+            List<string> genres = new List<string>();
+            foreach (var movie in movieList)
+            {
+                var genreAttr = movie.genres.Split('|');
 
+                //genre
+                foreach (var genre in genreAttr)
+                {
+                    if(!genres.Contains(genre))
+                    {
+                        genres.Add(genre);
+                        lstGenres.Items.Add(genre);
+                    }
+                    
+                //350k voted users
+                if(movie.num_voted_users > 350000)
+                    {
+                        lstVoted.Items.Add(movie.movie_title);
+                    }    
+
+                //highest IMDB score
+                if(movie.imdb_score > Convert.ToDouble(txtScore.Text))
+                    {
+                        txtScore.Text = movie.imdb_score.ToString();
+                    }
+
+                }
+            }
+
+            
+
+
+            //350k voted users
+            
+        }
     }
 }

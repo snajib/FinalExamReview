@@ -10,7 +10,7 @@
         public string genres { get; set; }
         public string actor_1_name { get; set; }
         public string movie_title { get; set; }
-        public string num_voted_users { get; set; }
+        public int num_voted_users { get; set; }
         public int cast_total_facebook_likes { get; set; }
         public string plot_keywords { get; set; }
         public string movie_imdb_link { get; set; }
